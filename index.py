@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'shreyanshss7@gmail.com'
-app.config['MAIL_PASSWORD'] = 'shreyanshthess7'
+app.config['MAIL_USERNAME'] = ''
+app.config['MAIL_PASSWORD'] = ''
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -32,7 +32,7 @@ def contact_form():
 		number = request.form['number']
 		message = request.form['message']
 
-		msg = Message('%s' % (name) , sender='shreyanshss7@gmail.com' , recipients=['%s' % (email)])
+		msg = Message('%s' % (name) , sender='tmail6336@gmail.com' , recipients=['%s' % (email)])
 		msg.body = ( '%s , %s ' % (message, number))
 		mail.send(msg)
 		return render_template('index.html')
